@@ -1,0 +1,6 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=dwm (with debug log)
+Comment=Lightweight tiling window manager
+Exec=dwm-with-debug-log
+Type=XSession

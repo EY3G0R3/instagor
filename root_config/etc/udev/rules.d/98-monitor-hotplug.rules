@@ -1,0 +1,23 @@
+### LOGGING ###
+KERNEL=="card0", SUBSYSTEM=="drm", RUN+="/bin/sh -c 'echo >> /home/igorg/udev-env.txt; echo === $(date): >> /home/igorg/udev-env.txt; echo === TRIGGER: KERNEL equals card0 >> /home/igorg/udev-env.txt; env >> /home/igorg/udev-env.txt'"
+# broader logging, catch more
+SUBSYSTEM=="drm", RUN+="/bin/sh -c 'echo >> /home/igorg/udev-env.txt; echo === $(date): >> /home/igorg/udev-env.txt; echo === TRIGGER: SUBSYSTEM equals drm >> /home/igorg/udev-env.txt; env >> /home/igorg/udev-env.txt'"
+
+
+
+### ACTUAL RULES
+
+# TODO: if this rule doesn't fire, try removing KERNEL=="card0" part
+# NOTE: latest change: don't use ENV{DISPLAY}=":0" to set DISPLAY from here, let igorandr figure it out
+#KERNEL=="card0", SUBSYSTEM=="drm", ACTION=="change", RUN+="/home/igorg/bin/igorandr 98-monitor-hotplug.rules change KERNEL"
+
+# use igorandrd instead
+# narrower rules
+KERNEL=="card0", SUBSYSTEM=="drm", ACTION=="change", RUN+="/home/igorg/bin/igorandrd request 98-monitor-hotplug.rules change KERNEL"
+# broader rules
+# SUBSYSTEM=="drm", ACTION=="change", RUN+="/home/igorg/bin/igorandrd request 98-monitor-hotplug.rules change KERNEL"
+
+
+# Fedora on Lenovo X1:
+# NOTE: for some weird reason, the previous (KERNEL="card0") rule fires, but this doesn't
+#DEVNAME=="/dev/dri/card0", SUBSYSTEM=="drm", ACTION=="change", RUN+="/home/igorg/rc/bin/igorandr 98-monitor-hotplug.rules change DEVNAME"

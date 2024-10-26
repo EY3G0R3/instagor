@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# tailscale
+sudo apt install -y tailscale systemd-resolved network-manager

@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# Before installing, let's move our yadm-managed files out of the way:
+mv ~/.oh-my-zsh ~/.oh-my-zsh-from-yadm
+
+### From https://github.com/ohmyzsh/ohmyzsh:
+
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# TODO: see whether we can just link ~/.oh-my-zsh/custom to ~/rc/oh-my-zsh/custom directory
+
+# Autosuggestions plugin:
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# Syntax highlighting plugin:
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# Calc plugin: Careful, conflicts with syntax highlighting and autosuggestions
+git clone https://github.com/arzzen/calc.plugin.zsh ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/calc
+
+# powerlevel10k theme
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+
+# TODO: get plugin management for zsh/oh-my-zsh
+# (DEPRECATED) powerlevel9k theme
+# https://github.com/bhilburn/powerlevel9://github.com/bhilburn/powerlevel9k
+#git clone https://github.com/bhilburn/powerlevel9k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel9k
+# (enable it in ~/.zshrc by doing
+# ZSH_THEME="powerlevel9k/powerlevel9k"
+
+
+# zsh feature refresher: https://code.joejag.com/2014/why-zsh.html
+# zsh feature cheatsheet: https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
+
+

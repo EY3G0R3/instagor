@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+
+sudo apt install                \
+  apt-file                      \
+  exuberant-ctags               \
+  firefox-esr                   \
+  hsetroot                      \
+  screenkey                     \
+  silversearcher-ag             \
+  xserver-xorg-input-synaptics

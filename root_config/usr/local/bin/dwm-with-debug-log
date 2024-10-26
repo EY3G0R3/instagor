@@ -1,0 +1,16 @@
+#!/bin/bash
+
+DWM_LOGFILE=~/dwm.log
+DWM_ERROR_LOGFILE=~/dwm-error.log
+
+echo                                                  | tee -a $DWM_LOGFILE $DWM_ERROR_LOGFILE
+echo "============================================="  | tee -a $DWM_LOGFILE $DWM_ERROR_LOGFILE
+echo "$(date): starting dwm"                          | tee -a $DWM_LOGFILE $DWM_ERROR_LOGFILE
+echo "============================================="  | tee -a $DWM_LOGFILE $DWM_ERROR_LOGFILE
+
+/usr/local/bin/dwm >> $DWM_LOGFILE 2>>$DWM_ERROR_LOGFILE
+
+echo "============================================="  | tee -a $DWM_LOGFILE $DWM_ERROR_LOGFILE
+echo "$(date): exiting dwm"                           | tee -a $DWM_LOGFILE $DWM_ERROR_LOGFILE
+echo "============================================="  | tee -a $DWM_LOGFILE $DWM_ERROR_LOGFILE
+echo                                                  | tee -a $DWM_LOGFILE $DWM_ERROR_LOGFILE

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+### fancybar
+cd ~/src/
+git clone git@github.com:EY3G0R3/fancybar.git
+cd fancybar
+gcc -o fancybar fancybar.c

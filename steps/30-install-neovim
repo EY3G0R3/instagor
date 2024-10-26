@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+VERSION="v0.10.2"
+
+# don't use nightly because it contains breaking changes
+#VERSION="nightly"
+
+# Neovim - nightly
+mkdir -p ~/Downloads
+cd ~/Downloads
+rm nvim.appimage
+wget https://github.com/neovim/neovim/releases/download/$VERSION/nvim.appimage
+chmod +x nvim.appimage
+sudo rm /usr/bin/nvim
+sudo cp nvim.appimage /usr/bin/nvim
+
+sudo apt install fuse
+# maybe libfuse2 too
+
+

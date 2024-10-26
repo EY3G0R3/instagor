@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+
+SOURCE_DIR="root_config/" # source directory to search
+DEST_DIR="/"              # destination directory
+
+
+# Function to check and handle files
+check_file() {
+    local file_path="$1"
+    local rel_path="${file_path#$SOURCE_DIR}"  # Get the relative path
+    local dest_path="$DEST_DIR/$rel_path"  # Destination path in the root directory
+
+    echo
+    echo "Source file: $file_path"
+    echo "Destination file: $dest_path"
+
+    if [[ -e "$dest_path" ]]; then
+        if cmp -s "$file_path" "$dest_path"; then
+            echo "Destination file exists and is the same. Skipping."
+        else
+            echo "File exists but is different."
+            diff "$file_path" "$dest_path"
+            read -p "Do you want to replace the file under $DEST_DIR? [Y/n]: " choice
+            choice=${choice:-y}
+            if [[ "$choice" == "y" || "choice" == "Y" ]]; then
+                sudo cp "$file_path" "$dest_path"
+                echo "File replaced."
+            else
+                echo "File not replaced."
+            fi
+        fi
+    else
+        echo "The destination file doesn't exist."
+        read -p "Copy it? [Y/n]: " choice
+        choice=${choice:-y}
+        if [[ "$choice" == "y" || "choice" == "Y" ]]; then
+            sudo mkdir -p "$(dirname "$dest_path")"  # Create subdirectory
+            sudo cp "$file_path" "$dest_path"  # Copy file
+            echo "File copied."
+        else
+            echo "File not copied."
+        fi
+    fi
+}
+
+export -f check_file  # Export function for use in find
+
+pushd $SOURCE_DIR > /dev/null
+
+echo "This script will synchronize all files in subdirectories of:"
+echo "  $(pwd)"
+echo "to the following directory:"
+echo "  $DEST_DIR"
+echo
+
+# Use find to locate files and process each one
+find . -type f -exec bash -c 'check_file "$0"' {} \;
+
+popd > /dev/null

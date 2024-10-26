@@ -1,0 +1,46 @@
+#!/usr/bin/env sh
+
+
+
+sudo apt install                \
+  acpi                          \
+  automake                      \
+  bat                           \
+  blueman                       \
+  btop                          \
+  compton                       \
+  curl                          \
+  dbus-bin                      \
+  dbus-x11                      \
+  dconf-editor                  \
+  ffmpeg                        \
+  git                           \
+  git-delta                     \
+  htop                          \
+  kitty                         \
+  lxappearance                  \
+  maim                          \
+  make                          \
+  mc                            \
+  meld                          \
+  mpv                           \
+  ncdu                          \
+  neofetch                      \
+  network-manager               \
+  network-manager-gnome         \
+  nnn                           \
+  notify-osd                    \
+  pavucontrol                   \
+  pcmanfm                       \
+  redshift                      \
+  redshift-gtk                  \
+  rofi                          \
+  system-config-printer         \
+  sxhkd                         \
+  vorbis-tools                  \
+  xbacklight                    \
+  xdotool                       \
+  xorg                          \
+  zsh
+
+

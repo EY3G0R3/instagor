@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+sudo apt install yadm
+
+yadm clone git@github.com:EY3G0R3/dotfiles.git
+yadm gitconfig --local user.email "igor.gevka@gmail.com"

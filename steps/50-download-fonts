@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+
+mkdir ~/.fonts
+cd ~/.fonts
+
+# TODO: download the fonts from somewhere
+
+fc-cache -fv .

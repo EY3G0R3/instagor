@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# dependencies
+sudo apt install git make python3 python3-pip nodejs npm cargo ripgrep
+
+# LunarVim - latest
+bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+
+# further instructions:
+# https://www.lunarvim.org/docs/installation
