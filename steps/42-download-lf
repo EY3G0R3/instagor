@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+VERSION="r32"
+FILENAME="lf-linux-amd64.tar.gz"
+BINARY="lf"
+
+mkdir -p ~/Downloads
+cd ~/Downloads
+rm $FILENAME
+wget https://github.com/gokcehan/lf/releases/download/$VERSION/$FILENAME
+rm $BINARY
+tar -zxf $FILENAME
+sudo mkdir -p /usr/local/bin
+sudo cp $BINARY /usr/local/bin
+
