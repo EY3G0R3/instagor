@@ -1,4 +1,7 @@
 #!/bin/sh
+
+# CAUTION! this causes a deadlock under Debian
+
 set -e
 
     case "$1" in
