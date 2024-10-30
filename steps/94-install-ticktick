@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+VERSION="6.0.10"
+
+mkdir ~/Downloads
+cd ~/Downloads
+# cloudfront url, might not be valid:
+wget https://d2atcrkye2ik4e.cloudfront.net/download/linux/linux_deb_x64/ticktick-$VERSION-amd64.deb
+# wget https://ticktick.com/download/linux/linux_deb_x64/ticktick-$VERSION-amd64.deb
+sudo  dpkg -i ticktick-$VERSION-amd64.deb
+
