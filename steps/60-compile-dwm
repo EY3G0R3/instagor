@@ -15,6 +15,10 @@ mkdir -p ~/src
 cd ~/src/
 git clone git@github.com:EY3G0R3/dwm.git
 cd dwm
+
+# set up a remote pointing to dwm on suckless.org
+git remote add suckless git://git.suckless.org/dwm
+
 make
 sudo make install
 
