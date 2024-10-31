@@ -5,6 +5,7 @@ sudo apt install                \
   apt-file                      \
   exuberant-ctags               \
   firefox-esr                   \
+  gthumb                        \
   hsetroot                      \
   screenkey                     \
   silversearcher-ag             \
