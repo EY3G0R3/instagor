@@ -3,6 +3,7 @@
 
 sudo apt install                \
   apt-file                      \
+  cups                          \
   exuberant-ctags               \
   firefox-esr                   \
   gthumb                        \
