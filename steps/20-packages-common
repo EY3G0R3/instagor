@@ -16,6 +16,7 @@ sudo apt install                \
   ffmpeg                        \
   git                           \
   git-delta                     \
+  gitk                          \
   htop                          \
   kitty                         \
   lxappearance                  \
