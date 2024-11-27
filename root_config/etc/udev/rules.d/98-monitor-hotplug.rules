@@ -1,7 +1,7 @@
 ### LOGGING ###
-KERNEL=="card0", SUBSYSTEM=="drm", RUN+="/bin/sh -c 'echo >> /home/igorg/udev-env.txt; echo === $(date): >> /home/igorg/udev-env.txt; echo === TRIGGER: KERNEL equals card0 >> /home/igorg/udev-env.txt; env >> /home/igorg/udev-env.txt'"
+KERNEL=="card0", SUBSYSTEM=="drm", RUN+="/bin/sh -c 'echo >> /home/igorg/udev-env.log; echo === $(date): >> /home/igorg/udev-env.log; echo === TRIGGER: KERNEL equals card0 >> /home/igorg/udev-env.log; env >> /home/igorg/udev-env.log'"
 # broader logging, catch more
-SUBSYSTEM=="drm", RUN+="/bin/sh -c 'echo >> /home/igorg/udev-env.txt; echo === $(date): >> /home/igorg/udev-env.txt; echo === TRIGGER: SUBSYSTEM equals drm >> /home/igorg/udev-env.txt; env >> /home/igorg/udev-env.txt'"
+SUBSYSTEM=="drm", RUN+="/bin/sh -c 'echo >> /home/igorg/udev-env.log; echo === $(date): >> /home/igorg/udev-env.log; echo === TRIGGER: SUBSYSTEM equals drm >> /home/igorg/udev-env.log; env >> /home/igorg/udev-env.log'"
 
 
 
@@ -20,4 +20,4 @@ KERNEL=="card0", SUBSYSTEM=="drm", ACTION=="change", RUN+="/home/igorg/bin/igora
 
 # Fedora on Lenovo X1:
 # NOTE: for some weird reason, the previous (KERNEL="card0") rule fires, but this doesn't
-#DEVNAME=="/dev/dri/card0", SUBSYSTEM=="drm", ACTION=="change", RUN+="/home/igorg/rc/bin/igorandr 98-monitor-hotplug.rules change DEVNAME"
+#DEVNAME=="/dev/dri/card0", SUBSYSTEM=="drm", ACTION=="change", RUN+="/home/igorg/bin/igorandr 98-monitor-hotplug.rules change DEVNAME"
