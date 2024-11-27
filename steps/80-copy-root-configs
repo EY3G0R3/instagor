@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
 
+# TODO: move the whole contents of this file into a separate script
+#       which will take two directories as command line arguments
+#       (and will use sudo only if necessary)
+
 SOURCE_DIR="root_config/" # source directory to search
 DEST_DIR="/"              # destination directory
 
