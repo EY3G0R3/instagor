@@ -1,7 +1,7 @@
 ### LOGGING ###
-KERNEL=="card0", SUBSYSTEM=="drm", RUN+="/bin/sh -c 'echo >> /home/igorg/udev-env.log; echo === $(date): >> /home/igorg/udev-env.log; echo === TRIGGER: KERNEL equals card0 >> /home/igorg/udev-env.log; env >> /home/igorg/udev-env.log'"
+KERNEL=="card0", SUBSYSTEM=="drm", RUN+="/bin/sh -c 'echo >> /home/igorg/logs/udev-env; echo === $(date): >> /home/igorg/logs/udev-env; echo === TRIGGER: KERNEL equals card0 >> /home/igorg/logs/udev-env; env >> /home/igorg/logs/udev-env'"
 # broader logging, catch more
-SUBSYSTEM=="drm", RUN+="/bin/sh -c 'echo >> /home/igorg/udev-env.log; echo === $(date): >> /home/igorg/udev-env.log; echo === TRIGGER: SUBSYSTEM equals drm >> /home/igorg/udev-env.log; env >> /home/igorg/udev-env.log'"
+SUBSYSTEM=="drm", RUN+="/bin/sh -c 'echo >> /home/igorg/logs/udev-env; echo === $(date): >> /home/igorg/logs/udev-env; echo === TRIGGER: SUBSYSTEM equals drm >> /home/igorg/logs/udev-env; env >> /home/igorg/logs/udev-env'"
 
 
 
