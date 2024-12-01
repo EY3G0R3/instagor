@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# for now
+DISTRO="Debian"
+
+### dependencies
+[ "$DISTRO" = "Debian" ] && sudo apt install -y libgcr-3-dev
+[ "$DISTRO" = "Ubuntu" ] && sudo apt install -y libgcr-3-dev
+[ "$DISTRO" = "Fedora" ] && sudo dnf install -y
+
+
+### surf
+mkdir -p ~/src
+cd ~/src/
+git clone git@github.com:EY3G0R3/surf.git
+cd surf
+
+# set up a remote pointing to dwm on suckless.org
+git remote add suckless git://git.suckless.org/surf
+
+make clean
+sudo make install
