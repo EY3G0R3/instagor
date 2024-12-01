@@ -24,7 +24,7 @@ check_file() {
             echo "Destination file exists and is the same. Skipping."
         else
             echo "File exists but is different."
-            diff "$file_path" "$dest_path"
+            diff --color "$dest_path" "$file_path"
             read -p "Do you want to replace the file under $DEST_DIR? [Y/n]: " choice
             choice=${choice:-y}
             if [[ "$choice" == "y" || "choice" == "Y" ]]; then
