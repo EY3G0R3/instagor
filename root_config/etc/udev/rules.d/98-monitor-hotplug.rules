@@ -3,6 +3,10 @@ KERNEL=="card0", SUBSYSTEM=="drm", RUN+="/bin/sh -c 'echo >> /home/igorg/logs/ud
 # broader logging, catch more
 SUBSYSTEM=="drm", RUN+="/bin/sh -c 'echo >> /home/igorg/logs/udev-env; echo === $(date): >> /home/igorg/logs/udev-env; echo === TRIGGER: SUBSYSTEM equals drm >> /home/igorg/logs/udev-env; env >> /home/igorg/logs/udev-env'"
 
+# try one liner
+# SUBSYSTEM=="drm", RUN+="/bin/sh -c echo '\n$(date)\nTRIGGER: SUBSYSTEM equals drm\n---\n$(env)\n' >> /home/igorg/logs/udev-env-experimental"
+SUBSYSTEM=="drm", RUN+="/bin/sh -c 'echo \\n$(date)\\nTRIGGER: SUBSYSTEM equals drm\\n---\\n$(env)\\n >> /home/igorg/logs/udev-env-experimental'"
+
 
 
 ### ACTUAL RULES
@@ -15,7 +19,7 @@ SUBSYSTEM=="drm", RUN+="/bin/sh -c 'echo >> /home/igorg/logs/udev-env; echo === 
 # narrower rules
 KERNEL=="card0", SUBSYSTEM=="drm", ACTION=="change", RUN+="/home/igorg/bin/igorandrd request 98-monitor-hotplug.rules change KERNEL"
 # broader rules
-# SUBSYSTEM=="drm", ACTION=="change", RUN+="/home/igorg/bin/igorandrd request 98-monitor-hotplug.rules change KERNEL"
+# SUBSYSTEM=="drm", ACTION=="change", RUN+="/home/igorg/bin/igorandrd request 98-monitor-hotplug.rules change DRM"
 
 
 # Fedora on Lenovo X1:
