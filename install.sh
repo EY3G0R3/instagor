@@ -6,8 +6,8 @@
 #
 
 # Install dependencies
-apt-get update
-apt-get install -y git yadm
+sudo apt-get update
+sudo apt-get install -y git yadm
 
 mkdir -p ~/src/
 cd ~/src/
