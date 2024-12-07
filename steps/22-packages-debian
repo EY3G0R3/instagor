@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 
-sudo apt install                \
+sudo apt install -y             \
   apt-file                      \
   cups                          \
   exuberant-ctags               \
@@ -11,3 +11,6 @@ sudo apt install                \
   screenkey                     \
   silversearcher-ag             \
   xserver-xorg-input-synaptics
+
+# update the apt-file database
+sudo apt-file update

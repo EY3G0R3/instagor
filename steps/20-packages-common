@@ -2,7 +2,7 @@
 
 
 
-sudo apt install                \
+sudo apt install -y             \
   acpi                          \
   automake                      \
   bat                           \
