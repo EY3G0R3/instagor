@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
 
+# CAUTION: these vary based on the distro
+# The following is for Debian 13 (Trixie)
+curl -fsSL https://pkgs.tailscale.com/stable/debian/sid.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
+curl -fsSL https://pkgs.tailscale.com/stable/debian/sid.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
+
 # tailscale
 sudo apt install -y tailscale systemd-resolved network-manager
