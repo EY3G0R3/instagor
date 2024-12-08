@@ -1,19 +1,60 @@
 #!/usr/bin/env bash
 
+# kitty has this annoying habit of automatically pulling bold/italic fonts
+# from the system. there is no way to disable this behavior, so the only way 
+# to prevent it is not to have bold/italic fonts installed.
+#
+# Therefore, this script will download the .zip files with the fonts, however
+# will then cherry-pick and install only "Regular" versions of the fonts.
+
+NERD_FONTS_VERSION="v3.3.0"
+NERD_FONTS_BASE_URL="https://github.com/ryanoasis/nerd-fonts/releases/download/$NERD_FONTS_VERSION"
+
+# $1: font zip file
+# $2: font file to install
+function install_font() {
+  if [ ! -f "$1" ]; then
+    wget "$NERD_FONTS_BASE_URL/$1"
+  fi
+
+  if [ ! -f "$1" ]; then
+    echo "Failed to download $1"
+    return
+  fi
+
+  unzip -o $1 $2 -d ~/.fonts
+}
+
+
+# make sure ~/.fonts exists
 mkdir ~/.fonts
 
+# download the fonts into a temporary directory
 mkdir -p ~/Downloads/fonts
 cd ~/Downloads/fonts
 
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/OpenDyslexic.zip
-unzip OpenDyslexic.zip OpenDyslexicMNerdFontMono-Regular.otf -d ~/.fonts
-unzip OpenDyslexic.zip OpenDyslexicMNerdFontPropo-Regular.otf -d ~/.fonts
+# NOTE: we can use wildcards here, e.g. "*-Regular.?tf"
 
+install_font FantasqueSansMono.zip FantasqueSansMNerdFontMono-Regular.ttf
+install_font FantasqueSansMono.zip FantasqueSansMNerdFontPropo-Regular.ttf
+
+install_font IosevkaTermSlab.zip "*-Regular.?tf"
+
+install_font OpenDyslexic.zip OpenDyslexicMNerdFontMono-Regular.otf
+install_font OpenDyslexic.zip OpenDyslexicMNerdFontPropo-Regular.otf
+
+install_font Recursive.zip RecMonoCasualNerdFontMono-Regular.ttf
+install_font Recursive.zip RecMonoCasualNerdFontPropo-Regular.ttf
+install_font Recursive.zip RecMonoSmCasualNerdFontMono-Regular.ttf
+
+install_font ShareTechMono.zip ShureTechMonoNerdFont-Regular.ttf
+install_font ShareTechMono.zip ShureTechMonoNerdFontMono-Regular.ttf
+install_font ShareTechMono.zip ShureTechMonoNerdFontPropo-Regular.ttf
+
+install_font Terminus.zip TerminessNerdFontMono-Regular.ttf
+install_font Terminus.zip TerminessNerdFontPropo-Regular.ttf
+
+
+# fonts are downloaded and unpacked; make them available to the system
 cd ~/.fonts
-
-
-
-
-# TODO: download the fonts from somewhere
-
 fc-cache -fv .
