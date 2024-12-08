@@ -1,8 +1,18 @@
 #!/usr/bin/env bash
 
-
 mkdir ~/.fonts
+
+mkdir -p ~/Downloads/fonts
+cd ~/Downloads/fonts
+
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/OpenDyslexic.zip
+unzip OpenDyslexic.zip OpenDyslexicMNerdFontMono-Regular.otf -d ~/.fonts
+unzip OpenDyslexic.zip OpenDyslexicMNerdFontPropo-Regular.otf -d ~/.fonts
+
 cd ~/.fonts
+
+
+
 
 # TODO: download the fonts from somewhere
 
