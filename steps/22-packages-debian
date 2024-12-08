@@ -10,6 +10,7 @@ sudo apt install -y             \
   hsetroot                      \
   screenkey                     \
   silversearcher-ag             \
+  ueberzug                      \
   xserver-xorg-input-synaptics
 
 # update the apt-file database
