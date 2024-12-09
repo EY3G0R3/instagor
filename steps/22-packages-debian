@@ -8,6 +8,7 @@ sudo apt install -y             \
   firefox-esr                   \
   gthumb                        \
   hsetroot                      \
+  lsd                           \
   screenkey                     \
   silversearcher-ag             \
   ueberzug                      \
