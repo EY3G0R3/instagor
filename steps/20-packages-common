@@ -31,6 +31,7 @@ sudo apt install -y             \
   network-manager-gnome         \
   nnn                           \
   notify-osd                    \
+  pamixer                       \
   pavucontrol                   \
   pcmanfm                       \
   redshift                      \
