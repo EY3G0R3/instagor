@@ -13,6 +13,7 @@ sudo apt install -y             \
   dbus-bin                      \
   dbus-x11                      \
   dconf-editor                  \
+  dunst                         \
   ffmpeg                        \
   git                           \
   git-delta                     \
