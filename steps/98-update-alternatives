@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+### you can double-check it manually with any of the:
+# update-alternatives --display x-session-manager
+# update-alternatives --query x-session-manager
+# sudo update-alternatives --config x-session-manager
+
+### dwm as default session manager
+sudo update-alternatives --install /usr/bin/x-session-manager x-session-manager /usr/local/bin/dwm 30
+sudo update-alternatives --set x-session-manager /usr/local/bin/dwm
+
+### kitty as default terminal emulator
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/kitty 60
+sudo update-alternatives --set x-terminal-emulator /usr/bin/kitty
+
+### dwm-sensible-browser as default web browser
+sudo update-alternatives --install /usr/bin/x-www-browser x-www-browser /home/igorg/bin/dwm-sensible-browser 60
+sudo update-alternatives --set x-www-browser /home/igorg/bin/dwm-sensible-browser
+
+### lvim as default text editor
+sudo update-alternatives --install /usr/bin/editor editor /home/igorg/.local/bin/lvim 60
+sudo update-alternatives --set editor /home/igorg/.local/bin/lvim
+
+### TODO: there's also x-cursor-theme. Is this the right place to set it?
