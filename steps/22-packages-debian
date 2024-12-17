@@ -9,6 +9,7 @@ sudo apt install -y             \
   gthumb                        \
   hsetroot                      \
   lsd                           \
+  policykit-1-gnome             \
   screenkey                     \
   silversearcher-ag             \
   ueberzug                      \
