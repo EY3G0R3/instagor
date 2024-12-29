@@ -46,6 +46,7 @@ sudo apt install -y             \
   xdotool                       \
   xinput                        \
   xorg                          \
+  zathura                       \
   zsh
 
 
