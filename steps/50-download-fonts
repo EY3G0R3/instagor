@@ -56,14 +56,21 @@ cd ~/Downloads/fonts
 
 # NOTE: we can use wildcards here, e.g. "*-Regular.?tf"
 
+install_font CascadiaCode.zip CaskaydiaCoveNerdFont-Regular.ttf
+install_font CascadiaCode.zip CaskaydiaCoveNerdFontMono-Regular.ttf
+install_font CascadiaCode.zip CaskaydiaCoveNerdFontPropo-Regular.ttf
+
+install_font FantasqueSansMono.zip FantasqueSansMNerdFont-Regular.ttf
 install_font FantasqueSansMono.zip FantasqueSansMNerdFontMono-Regular.ttf
 install_font FantasqueSansMono.zip FantasqueSansMNerdFontPropo-Regular.ttf
 
 install_font IosevkaTermSlab.zip "*-Regular.?tf"
 
+install_font OpenDyslexic.zip OpenDyslexicMNerdFont-Regular.otf
 install_font OpenDyslexic.zip OpenDyslexicMNerdFontMono-Regular.otf
 install_font OpenDyslexic.zip OpenDyslexicMNerdFontPropo-Regular.otf
 
+install_font Recursive.zip RecMonoCasualNerdFont-Regular.ttf
 install_font Recursive.zip RecMonoCasualNerdFontMono-Regular.ttf
 install_font Recursive.zip RecMonoCasualNerdFontPropo-Regular.ttf
 install_font Recursive.zip RecMonoSmCasualNerdFontMono-Regular.ttf
@@ -72,6 +79,7 @@ install_font ShareTechMono.zip ShureTechMonoNerdFont-Regular.ttf
 install_font ShareTechMono.zip ShureTechMonoNerdFontMono-Regular.ttf
 install_font ShareTechMono.zip ShureTechMonoNerdFontPropo-Regular.ttf
 
+install_font Terminus.zip TerminessNerdFont-Regular.ttf
 install_font Terminus.zip TerminessNerdFontMono-Regular.ttf
 install_font Terminus.zip TerminessNerdFontPropo-Regular.ttf
 
