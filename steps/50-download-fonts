@@ -33,6 +33,27 @@ mkdir ~/.fonts
 mkdir -p ~/Downloads/fonts
 cd ~/Downloads/fonts
 
+# NOTE: On font families
+# From Nerd Fonts README.md:
+#   * If you are limited to monospaced fonts (because of your terminal, etc) then pick a font with `Nerd Font Mono` (or `NFM`).
+#   * If you want to have bigger icons (usually around 1.5 normal letters wide) pick a font without `Mono` i.e. `Nerd Font` (or `NF`). Most terminals support this, but ymmv.
+#   * If you work in a proportional context (GUI elements or edit a presentation etc) pick a font with `Nerd Font Propo` (or `NFP`).
+#
+# NOTE: (from myself):
+#   Proportional fonts are variable-width fonts.
+#   Most terminals aren't supposed to support them (Kitty doesn't, for example)
+#   Not sure why are they bundled with (and named) Mono - maybe so the rest of GUI can look consistent
+#   Proportional fonts (NFP) have large icons just like NF fonts do, however they do adjust the width of characters accordingly
+#   This means that NF characters will take less horizontal space than NFP fonts
+#   However, using NF fonts might result in some wide icons overlapping with the text that follows them
+#   And this is not the case with Proportional fonts
+#   So far, the best options that I have found are:
+#     * For terminals, use just NF - because they have larger icons, and they are still Mono fonts
+#     * For dwm, use Proportional (NFP) fonts - because there won't be any troubles with "overlapping" icons
+#
+# TODO: we can, probably, safely remove NFM versions from here, because we use only NF and sometimes NFP
+
+
 # NOTE: we can use wildcards here, e.g. "*-Regular.?tf"
 
 install_font FantasqueSansMono.zip FantasqueSansMNerdFontMono-Regular.ttf
