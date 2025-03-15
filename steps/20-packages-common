@@ -19,6 +19,7 @@ sudo apt install -y             \
   git                           \
   git-delta                     \
   gitk                          \
+  glow                          \
   htop                          \
   kitty                         \
   lxappearance                  \
